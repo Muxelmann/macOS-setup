@@ -48,6 +48,7 @@ brew tap homebrew/cask-drivers
 
 brew install --cask synology-drive          # https://www.synology.com/en-us/releaseNote/SynologyDriveClient
 brew install --cask fujitsu-scansnap-home
+brew install --cask displaylink
 
 # Now install pyenv for development
 brew install pyenv
