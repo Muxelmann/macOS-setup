@@ -29,9 +29,11 @@ brew install --cask istat-menus                 # https://bjango.com/mac/istatme
 brew install --cask visual-studio-code          # https://code.visualstudio.com/
 brew install --cask sensei                      # https://sensei.app/
 brew install --cask github                      # https://desktop.github.com/
+brew install --cask wireshare
+brew install --cask macdown
 
 brew install --cask firefox                     # https://mozilla.org/firefox/
-brew install --cask openoffice                  # https://openoffice.org/
+# brew install --cask openoffice                  # https://openoffice.org/
 brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
 brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
 brew install --cask teamdrive                   # https://teamdrive.com/
