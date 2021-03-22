@@ -26,11 +26,21 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install --cask bartender                   # https://macbartender.com/
 brew install --cask istat-menus                 # https://bjango.com/mac/istatmenus/
 
-brew install --cask visual-studio-code          # https://code.visualstudio.com/
-brew install --cask sensei                      # https://sensei.app/
 brew install --cask github                      # https://desktop.github.com/
-brew install --cask wireshare
 brew install --cask macdown
+brew install --cask arduino
+brew install --cask wch-ch34x-usb-serial-driver # CH34 driver for ESP
+
+brew install --cask visual-studio-code          # https://code.visualstudio.com/
+
+# Installs extensions for VS Code
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-vscode.cpptools
+# code --install-extension vsciot-vscode.vscode-arduino
+
+brew install --cask sensei                      # https://sensei.app/
+brew install --cask wireshare
 brew install --cask cyberduck
 brew install --cask microsoft-office
 
