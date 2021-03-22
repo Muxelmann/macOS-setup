@@ -31,6 +31,8 @@ brew install --cask sensei                      # https://sensei.app/
 brew install --cask github                      # https://desktop.github.com/
 brew install --cask wireshare
 brew install --cask macdown
+brew install --cask cyberduck
+brew install --cask microsoft-office
 
 brew install --cask firefox                     # https://mozilla.org/firefox/
 # brew install --cask openoffice                  # https://openoffice.org/
