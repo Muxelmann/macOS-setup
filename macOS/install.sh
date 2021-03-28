@@ -43,6 +43,8 @@ brew install --cask sensei                      # https://sensei.app/
 brew install --cask wireshare
 brew install --cask cyberduck
 brew install --cask microsoft-office
+brew install --cask blender
+brew install --cask adobe-creative-cloud
 
 brew install --cask firefox                     # https://mozilla.org/firefox/
 # brew install --cask openoffice                  # https://openoffice.org/
