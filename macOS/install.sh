@@ -27,8 +27,8 @@ brew install --cask bartender                   # https://macbartender.com/
 brew install --cask istat-menus                 # https://bjango.com/mac/istatmenus/
 
 brew install --cask github                      # https://desktop.github.com/
-brew install --cask macdown
-brew install --cask arduino
+brew install --cask macdown                     # https://macdown.uranusjr.com/
+brew install --cask arduino                     # https://www.arduino.cc/
 brew install --cask wch-ch34x-usb-serial-driver # CH34 driver for ESP
 
 brew install --cask visual-studio-code          # https://code.visualstudio.com/
@@ -40,14 +40,15 @@ code --install-extension ms-vscode.cpptools
 # code --install-extension vsciot-vscode.vscode-arduino
 
 brew install --cask sensei                      # https://sensei.app/
-brew install --cask wireshare
-brew install --cask cyberduck
-brew install --cask microsoft-office
-brew install --cask blender
-brew install --cask adobe-creative-cloud
+brew install --cask wireshare                   # https://www.wireshark.org
+brew install --cask cyberduck                   # https://cyberduck.io/
+brew install --cask microsoft-office            # https://products.office.com/mac/microsoft-office-for-mac/
+brew install --cask blender                     # https://www.blender.org/
+brew install --cask adobe-creative-cloud        # https://www.adobe.com/creativecloud.html
+brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
 
 brew install --cask firefox                     # https://mozilla.org/firefox/
-# brew install --cask openoffice                  # https://openoffice.org/
+# brew install --cask openoffice                # https://openoffice.org/
 brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
 brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
 brew install --cask teamdrive                   # https://teamdrive.com/
