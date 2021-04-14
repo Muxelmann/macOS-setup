@@ -65,7 +65,7 @@ if [ "${1}" != "--source-only" ]; then
   if [ -f ${minecraft_home}/start ]; then
     sudo rm ${minecraft_home}/start
   fi
-  sudo cat >> ${minecraft_home}/start <<EOT
+  sudo -s cat >> ${minecraft_home}/start <<EOT
 #! /bin/sh
 /usr/bin/java -Xms2048M -Xmx2048M -jar server.jar nogui
 EOT
@@ -73,7 +73,7 @@ EOT
   if [ -f ${minecraft_home}/stop ]; then
     sudo rm ${minecraft_home}/stop
   fi
-  sudo cat >> ${minecraft_home}/stop <<EOT
+  sudo -s cat >> ${minecraft_home}/stop <<EOT
 #!/bin/sh
 ${minecraft_home}/mcrcon/mcrcon -H localhost -P ${minecraft_rcon_port} -p "${minecraft_rcon_password}" stop
 while kill -0 $MAINPID 2>/dev/null; do
@@ -84,7 +84,7 @@ EOT
   if [ -f ${minecraft_home}/server.properties ]; then
     sudo rm ${minecraft_home}/server.properties
   fi
-  sudo cat >> ${minecraft_home}/server.properties <<EOT
+  sudo -s cat >> ${minecraft_home}/server.properties <<EOT
 #Minecraft server properties
 enable-jmx-monitoring=false
 rcon.port=${minecraft_rcon_port}
@@ -141,7 +141,7 @@ EOT
   if [ -f ${minecraft_home}/eula.txt ]; then
     sudo rm ${minecraft_home}/eula.txt
   fi
-  sudo cat >> ${minecraft_home}/eula.txt <<EOT
+  sudo -s cat >> ${minecraft_home}/eula.txt <<EOT
 #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 eula=true
 EOT
@@ -161,7 +161,7 @@ EOT
 
   # Only crete a service if it does not yet exist
   if [ ! -f "${minecraft_service}" ]; then
-    sudo cat >> ${minecraft_service_path} <<EOT
+    sudo -s cat >> ${minecraft_service_path} <<EOT
 [Unit]
 Description=start and stop the minecraft-server 
 
