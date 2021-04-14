@@ -53,13 +53,12 @@ if [ "${1}" != "--source-only" ]; then
   fi
   sudo chmod 775 ${minecraft_home}/${minecraft_file}
   sudo chowm ${minecraft_user}:${minecraft_group} ${minecraft_home}/${minecraft_file}
-  ln -s ${minecraft_home}/${minecraft_file} ${minecraft_home}/server.jar
+  sudo ln -s ${minecraft_home}/${minecraft_file} ${minecraft_home}/server.jar
 
   oprint "Creating the Minecraft Service"
 
   sudo git clone https://github.com/Tiiffi/mcrcon.git ${minecraft_home}/mcrcon
   cd ${minecraft_home}/mcrcon && sudo make
-  sudo chmod 775 ${minecraft_home}/mcrcon/mcrcon
 
   # Creating files: start, stop, eula.txt etc.
   if [ -f ${minecraft_home}/start ]; then
@@ -69,8 +68,6 @@ if [ "${1}" != "--source-only" ]; then
 #! /bin/sh
 /usr/bin/java -Xms2048M -Xmx2048M -jar server.jar nogui
 EOF"
-  sudo chmod 775 ${minecraft_home}/start
-  sudo chown ${minecraft_user}:${minecraft_group} ${minecraft_home}/start
 
   if [ -f ${minecraft_home}/stop ]; then
     sudo rm ${minecraft_home}/stop
@@ -82,8 +79,6 @@ while kill -0 $MAINPID 2>/dev/null; do
   sleep 0.5
 done
 EOF"
-  sudo chmod 775 ${minecraft_home}/stop
-  sudo chown ${minecraft_user}:${minecraft_group} ${minecraft_home}/stop
 
   if [ -f ${minecraft_home}/server.properties ]; then
     sudo rm ${minecraft_home}/server.properties
@@ -141,8 +136,6 @@ spawn-protection=0
 resource-pack-sha1=
 max-world-size=29999984
 EOF"
-  sudo chmod 775 ${minecraft_home}/server.properties
-  sudo chown ${minecraft_user}:${minecraft_group} ${minecraft_home}/server.properties
 
   if [ -f ${minecraft_home}/eula.txt ]; then
     sudo rm ${minecraft_home}/eula.txt
@@ -151,8 +144,8 @@ EOF"
 #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 eula=true
 EOF"
-  sudo chmod 775 ${minecraft_home}/eula.txt
-  sudo chown ${minecraft_user}:${minecraft_group} ${minecraft_home}/eula.txt
+  sudo chmod 775 -R ${minecraft_home}
+  sudo chown -R ${minecraft_user}:${minecraft_group}
 
   if [ -f "${minecraft_service_path}" ]; then
     owarning "Minecraft service already exists!"
