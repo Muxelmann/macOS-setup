@@ -15,6 +15,7 @@ minecraft_rcon_password=$(openssl rand -hex 12)
 if [ "${1}" != "--source-only" ]; then
   omain "Installing Minecraft Service"
 
+  sudo apt update
   sudo apt -y install git openjdk-11-jre
 
 
