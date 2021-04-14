@@ -2,6 +2,30 @@
 
 These scripts will install all essential apps and tools that I want to use on my Mac and Raspberry Pi (RPi) computers.
 
+To use the setup, clone the repo and execute the relevant command, i.e.:
+
+### macOS
+
+This will run the complete setup for macOS and install all required apps.
+
+```bash
+git clone https://github.com/Muxelmann/system-setup.git
+cd system-setup/macOS
+./install.sh
+```
+
+### Raspberry Pi
+
+This will preview all available setups for Raspberry Pi. Using specific arguments (e.g. `--minecraft`) will trigger the applicable setup.
+
+```bash
+git clone https://github.com/Muxelmann/system-setup.git
+cd system-setup/RPi
+./install.sh --help
+```
+
+## Fututre
+
 Eventually, the scripts should be callable through:
 
 ```
