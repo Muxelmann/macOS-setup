@@ -57,23 +57,23 @@ if [ "${1}" != "--source-only" ]; then
 
   oprint "Creating the Minecraft Service"
 
-  git clone https://github.com/Tiiffi/mcrcon.git ${minecraft_home}/mcrcon
-  cd ${minecraft_home}/mcrcon && make
+  sudo git clone https://github.com/Tiiffi/mcrcon.git ${minecraft_home}/mcrcon
+  cd ${minecraft_home}/mcrcon && sudo make
   sudo chmod 775 ${minecraft_home}/mcrcon/mcrcon
 
   # Creating files: start, stop, eula.txt etc.
   if [ -f ${minecraft_home}/start ]; then
-    rm ${minecraft_home}/start
+    sudo rm ${minecraft_home}/start
   fi
-  cat >> ${minecraft_home}/start <<EOT
+  sudo cat >> ${minecraft_home}/start <<EOT
 #! /bin/sh
 /usr/bin/java -Xms2048M -Xmx2048M -jar server.jar nogui
 EOT
 
   if [ -f ${minecraft_home}/stop ]; then
-    rm ${minecraft_home}/stop
+    sudo rm ${minecraft_home}/stop
   fi
-  cat >> ${minecraft_home}/stop <<EOT
+  sudo cat >> ${minecraft_home}/stop <<EOT
 #!/bin/sh
 ${minecraft_home}/mcrcon/mcrcon -H localhost -P ${minecraft_rcon_port} -p "${minecraft_rcon_password}" stop
 while kill -0 $MAINPID 2>/dev/null; do
@@ -82,9 +82,9 @@ done
 EOT
 
   if [ -f ${minecraft_home}/server.properties ]; then
-    rm ${minecraft_home}/server.properties
+    sudo rm ${minecraft_home}/server.properties
   fi
-  cat >> ${minecraft_home}/server.properties <<EOT
+  sudo cat >> ${minecraft_home}/server.properties <<EOT
 #Minecraft server properties
 enable-jmx-monitoring=false
 rcon.port=${minecraft_rcon_port}
@@ -139,9 +139,9 @@ max-world-size=29999984
 EOT
 
   if [ -f ${minecraft_home}/eula.txt ]; then
-    rm ${minecraft_home}/eula.txt
+    sudo rm ${minecraft_home}/eula.txt
   fi
-  cat >> ${minecraft_home}/eula.txt <<EOT
+  sudo cat >> ${minecraft_home}/eula.txt <<EOT
 #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 eula=true
 EOT
@@ -161,7 +161,7 @@ EOT
 
   # Only crete a service if it does not yet exist
   if [ ! -f "${minecraft_service}" ]; then
-    cat >> ${minecraft_service_path} <<EOT
+    sudo cat >> ${minecraft_service_path} <<EOT
 [Unit]
 Description=start and stop the minecraft-server 
 
