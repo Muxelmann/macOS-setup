@@ -51,8 +51,6 @@ if [ "${1}" != "--source-only" ]; then
   else
     sudo curl ${minecraft_url} --output ${minecraft_home}/${minecraft_file}
   fi
-  sudo chmod 775 ${minecraft_home}/${minecraft_file}
-  sudo chowm ${minecraft_user}:${minecraft_group} ${minecraft_home}/${minecraft_file}
   sudo ln -s ${minecraft_home}/${minecraft_file} ${minecraft_home}/server.jar
 
   oprint "Creating the Minecraft Service"
@@ -145,7 +143,7 @@ EOF"
 eula=true
 EOF"
   sudo chmod 775 -R ${minecraft_home}
-  sudo chown -R ${minecraft_user}:${minecraft_group}
+  sudo chown -R ${minecraft_user}:${minecraft_group} ${minecraft_home}
 
   if [ -f "${minecraft_service_path}" ]; then
     owarning "Minecraft service already exists!"
