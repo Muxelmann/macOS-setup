@@ -13,7 +13,7 @@ if [ $? -ne 0 ]; then
   owarning "User \"${minecraft_user}\" does not exist"
 else
   oprint "Deleting user \"${minecraft_user}\""
-  # sudo deluser --remove-home ${minecraft_user}
+  sudo deluser --remove-home ${minecraft_user}
 fi
 
 grep -q ${minecraft_group} /etc/group &>/dev/null
@@ -21,7 +21,7 @@ if [ $? -ne 0 ]; then
   owarning "Group \"${minecraft_group}\" does not exist"
 else
   oprint "Deleting group \"${minecraft_group}\""
-  # sudo delgroup ${minecraft_group}
+  sudo delgroup ${minecraft_group}
 fi
 
 if [ ! -f "${minecraft_service_path}" ]; then
