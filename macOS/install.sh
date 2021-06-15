@@ -22,6 +22,9 @@ esac
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${shell_profile}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Also install MacOS Applications included in the tap: homebrew/cask-drivers
+brew tap homebrew/cask-drivers
+
 # Install MacOS Applications included in the tap: homebrew/core
 brew install --cask bartender                   # https://macbartender.com/
 brew install --cask istat-menus                 # https://bjango.com/mac/istatmenus/
@@ -52,16 +55,18 @@ brew install --cask firefox                     # https://mozilla.org/firefox/
 brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
 brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
 brew install --cask teamdrive                   # https://teamdrive.com/
-brew install --cask fujitsu-scansnap-home       # https://www.scansnapit.com/de/scansnap-software/scansnap-home/
+brew install --cask skype
 
 brew install --cask vlc                         # https://videolan.org/vlc/
 brew install --cask spotify                     # https://spotify.com/
+brew install --cask handbrake
+brew install --cask insta360-studio
 brew install --cask audio-hijack                # https://rogueamoeba.com/audiohijack/
 brew install --cask fission                     # https://rogueamoeba.com/fission/
 brew install --cask minecraft
 
-# Install MacOS Applications included in the tap: homebrew/cask-drivers
-brew tap homebrew/cask-drivers
+brew install --cask pronterface
+brew install --cask ultimaker-cura
 
 brew install --cask synology-drive          # https://www.synology.com/en-us/releaseNote/SynologyDriveClient
 brew install --cask fujitsu-scansnap-home
