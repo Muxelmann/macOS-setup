@@ -40,6 +40,7 @@ brew install --cask visual-studio-code          # https://code.visualstudio.com/
 code --install-extension ms-python.python
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-vscode.cpptools
+code --install-extension samuelcolvin.jinjahtml
 # code --install-extension vsciot-vscode.vscode-arduino
 
 brew install --cask sensei                      # https://sensei.app/
