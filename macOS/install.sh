@@ -37,13 +37,13 @@ brew install --cask microsoft-office            # https://products.office.com/ma
 brew install --cask synology-drive              # https://www.synology.com/en-us/releaseNote/SynologyDriveClient
 brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
 brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
-brew install --cask teamdrive                   # https://teamdrive.com/
 
 # Install Developer applications
 brew install --cask github                      # https://desktop.github.com/
 brew install --cask macdown                     # https://macdown.uranusjr.com/
 brew install --cask arduino                     # https://www.arduino.cc/
 brew install --cask wch-ch34x-usb-serial-driver # CH34 driver for ESP
+brew install --cask paragon-extfs               # https://www.paragon-software.com/ufsdhome/extfs-mac/
 
 brew install --cask visual-studio-code          # https://code.visualstudio.com/
 
@@ -80,13 +80,14 @@ brew install --cask displaylink
 
 # Now install pyenv for development
 brew install pyenv
+echo -e 'export PYENV_ROOT="$HOME/.pyenv"' >> ${shell_profile}
+echo -e 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ${shell_profile}
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then' >> ${shell_profile}
-echo -e '    eval "$(pyenv init -)"' >> ${shell_profile}
+echo -e '    eval "$(pyenv init --path)"' >> ${shell_profile}
 echo -e 'fi' >> ${shell_profile}
 
 # Python 3.9.1 should work (also on Macs with M1 chip)
 pyenv install 3.9.1
-pyenv global 3.9.1
 
 # Some files cannot be automatically downloaded, here I open the relevant website for manual download:
 open https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html
