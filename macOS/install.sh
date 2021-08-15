@@ -29,6 +29,14 @@ brew tap homebrew/cask-drivers
 brew install --cask bartender                   # https://macbartender.com/
 brew install --cask istat-menus                 # https://bjango.com/mac/istatmenus/
 
+# Install Office applications
+brew install --cask microsoft-office            # https://products.office.com/mac/microsoft-office-for-mac/
+brew install --cask synology-drive              # https://www.synology.com/en-us/releaseNote/SynologyDriveClient
+brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
+brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
+brew install --cask teamdrive                   # https://teamdrive.com/
+
+# Install Developer applications
 brew install --cask github                      # https://desktop.github.com/
 brew install --cask macdown                     # https://macdown.uranusjr.com/
 brew install --cask arduino                     # https://www.arduino.cc/
@@ -46,16 +54,11 @@ code --install-extension samuelcolvin.jinjahtml
 brew install --cask sensei                      # https://sensei.app/
 brew install --cask wireshare                   # https://www.wireshark.org
 brew install --cask cyberduck                   # https://cyberduck.io/
-brew install --cask microsoft-office            # https://products.office.com/mac/microsoft-office-for-mac/
 brew install --cask blender                     # https://www.blender.org/
 brew install --cask adobe-creative-cloud        # https://www.adobe.com/creativecloud.html
 brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
 
 brew install --cask firefox                     # https://mozilla.org/firefox/
-# brew install --cask openoffice                # https://openoffice.org/
-brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
-brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
-brew install --cask teamdrive                   # https://teamdrive.com/
 brew install --cask skype
 
 brew install --cask vlc                         # https://videolan.org/vlc/
@@ -69,7 +72,6 @@ brew install --cask minecraft
 brew install --cask pronterface
 brew install --cask ultimaker-cura
 
-brew install --cask synology-drive          # https://www.synology.com/en-us/releaseNote/SynologyDriveClient
 brew install --cask fujitsu-scansnap-home
 brew install --cask displaylink
 
