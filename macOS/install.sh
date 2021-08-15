@@ -22,6 +22,9 @@ esac
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${shell_profile}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Install Rosetta
+sudo softwareupdate --install-rosetta
+
 # Also install MacOS Applications included in the tap: homebrew/cask-drivers
 brew tap homebrew/cask-drivers
 
