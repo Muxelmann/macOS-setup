@@ -88,6 +88,13 @@ echo -e 'fi' >> ${shell_profile}
 
 # Python 3.9.1 should work (also on Macs with M1 chip)
 pyenv install 3.9.1
+pyenv local 3.9.1
+python_version=$(python -V 2>&1)
+if [ "${python_version}" = "Python 3.9.1" ]; then
+    pip install virtualenv
+else
+    echo "Error innstalling Python 3.9.1"
+fi
 
 # Some files cannot be automatically downloaded, here I open the relevant website for manual download:
 open https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html
