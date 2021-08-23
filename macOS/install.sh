@@ -53,6 +53,7 @@ code --install-extension ms-toolsai.jupyter
 code --install-extension ms-vscode.cpptools
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension WyattFerguson.jinja2-snippet-kit
+code --install-extension TabNine.tabnine-vscode # AI auto-completion
 # code --install-extension vsciot-vscode.vscode-arduino
 
 brew install --cask sensei                      # https://sensei.app/
