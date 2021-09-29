@@ -17,6 +17,9 @@ case "$SHELL" in
     ;;
 esac
 
+# Install command line tools
+xcode-select --install
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${shell_profile}
@@ -37,6 +40,7 @@ brew install --cask microsoft-office            # https://products.office.com/ma
 brew install --cask synology-drive              # https://www.synology.com/en-us/releaseNote/SynologyDriveClient
 brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
 brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
+
 
 # Install Developer applications
 brew install --cask github                      # https://desktop.github.com/
@@ -62,9 +66,12 @@ brew install --cask cyberduck                   # https://cyberduck.io/
 brew install --cask blender                     # https://www.blender.org/
 brew install --cask adobe-creative-cloud        # https://www.adobe.com/creativecloud.html
 brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
+brew install --cask latexit                     # https://www.chachatelier.fr/latexit/
+brew install --cask unity-hub                   # https://unity3d.com/get-unity/download
 
 brew install --cask firefox                     # https://mozilla.org/firefox/
-brew install --cask skype
+brew install --cask skype                       # https://www.skype.com/
+brew install --cask google-drive                # https://www.google.com/drive/
 
 brew install --cask vlc                         # https://videolan.org/vlc/
 brew install --cask spotify                     # https://spotify.com/
@@ -74,6 +81,8 @@ brew install --cask audio-hijack                # https://rogueamoeba.com/audioh
 brew install --cask fission                     # https://rogueamoeba.com/fission/
 brew install --cask minecraft
 
+# For making
+brew install --cask eagle
 brew install --cask pronterface
 brew install --cask ultimaker-cura
 
