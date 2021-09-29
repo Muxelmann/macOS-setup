@@ -97,7 +97,17 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then' >> ${shell_profile}
 echo -e '    eval "$(pyenv init --path)"' >> ${shell_profile}
 echo -e 'fi' >> ${shell_profile}
 
-# Python 3.9.1 should work (also on Macs with M1 chip)
+# Python 3.9.7 is the latest (currently)
+pyenv install 3.9.7
+pyenv local 3.9.7
+python_version=$(python -V 2>&1)
+if [ "${python_version}" = "Python 3.9.7" ]; then
+    pip install virtualenv
+else
+    echo "Error innstalling Python 3.9.7"
+fi
+
+# Python 3.9.1 should work also work with RPi
 pyenv install 3.9.1
 pyenv local 3.9.1
 python_version=$(python -V 2>&1)
